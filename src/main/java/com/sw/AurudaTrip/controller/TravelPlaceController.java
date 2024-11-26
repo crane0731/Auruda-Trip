@@ -19,7 +19,7 @@ public class TravelPlaceController {
     //travelCount가 높은 순서대로 리스트로 뽑아내는 컨트롤러
     @GetMapping
     public ResponseEntity<List<PlaceListByTravelCountResponseDto>> getPlaceListByTravelCount(){
-        System.out.println(" = ");
+        System.out.println("asd");
         List<PlaceListByTravelCountResponseDto> placeListByTravelCount = travelPlaceService.getPlaceListByTravelCount();
         return ResponseEntity.ok(placeListByTravelCount);
     }
