@@ -1,0 +1,66 @@
+server:
+  port: 8082
+
+spring:
+  data:
+    redis:
+      host: redis-container
+      port: 6379
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${YOUR_GOOGLE_USERNAME_HERE}
+    password: ${YOUR_GOOGLE_PASSWORD_HERE}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  application:
+    name: AurudaTrip #서비스 ID
+  datasource:
+    url: jdbc:mysql://mysql-container:3306/auruda
+    username: ${YOUR_DATABASE_USER_NAME}
+    password: ${YOUR_DATABASE_USER_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    org.springframework.validation: DEBUG
+    org.springframework.web.bind.annotation: DEBUG
+    org:
+      springframework:
+        web: DEBUG
+        validation: DEBUG
+        web.bind.annotation: DEBUG
+    hibernate:
+      SQL: DEBUG
+      type: TRACE
+openai:
+  api:
+    key: ${YOUR_OPENAI_API_KEY_HERE}
+
+data:
+  api:
+    key: ${YOUR_DATA_API_KEY_HERE}
+
+google:
+  api:
+    key: ${YOUR_GOOGLE_API_KEY_HERE}
+
