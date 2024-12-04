@@ -14,8 +14,7 @@ public class GptPlaceResponseDto {
     private String day;
     private String name;
     private String city;
-    private String address1;
-    private String address2;
+    private String address;
     private double lat;
     private double lng;
     private String photoUrl;

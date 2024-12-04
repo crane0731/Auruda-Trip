@@ -1,5 +1,6 @@
 package com.sw.AurudaTrip.service;
 
+import com.sw.AurudaTrip.domain.Theme;
 import com.sw.AurudaTrip.domain.TravelPlan;
 import com.sw.AurudaTrip.dto.itinerary.ItiernaryListResponseDto;
 import com.sw.AurudaTrip.repository.TravelPlanRepository;
@@ -34,9 +35,19 @@ public class TravelPlanService {
         return travelPlanRepository.findById(id).orElseThrow(()->new RuntimeException("여행 계획을 찾을 수 없습니다."));
     }
 
-    //여행계획 리스트 조회 서비스
+    //자신의 여행계획 리스트 조회 서비스
     public List<ItiernaryListResponseDto> getAllTravelPlans(Long userId) {
         List<TravelPlan> travelPlans = travelPlanRepository.findByUserId(userId);
+
+        // TravelPlan 리스트를 ItiernaryListResponseDto 리스트로 변환
+        return travelPlans.stream()
+                .map(travelPlan -> new ItiernaryListResponseDto(travelPlan.getId(),travelPlan.getTitle()))  // DTO로 변환
+                .collect(Collectors.toList());
+    }
+
+    //테마별로 여행계획 리스트를 조회하는 서비스
+    public List<ItiernaryListResponseDto> getPlansByTheme(String theme) {
+        List<TravelPlan> travelPlans = travelPlanRepository.findTop20ByTheme1OrTheme2OrTheme3(Theme.fromKoreanName(theme), Theme.fromKoreanName(theme), Theme.fromKoreanName(theme));
 
         // TravelPlan 리스트를 ItiernaryListResponseDto 리스트로 변환
         return travelPlans.stream()

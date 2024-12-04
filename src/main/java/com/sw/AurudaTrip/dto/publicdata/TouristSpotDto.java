@@ -13,8 +13,7 @@ public class TouristSpotDto {
     private Long travelPlaceId;
     private Long travelCount;
     private String city;
-    private String address1;
-    private String address2;
+    private String address;
     private String areaCode;
     private String sigunguCode;
     private String category;

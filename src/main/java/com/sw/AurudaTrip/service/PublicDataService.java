@@ -52,7 +52,7 @@ public class PublicDataService {
 
             // Redis에 있는 데이터를 데이터베이스와 동기화 (travelPlaceId 확인 및 갱신)
             for (TouristSpotDto spot : cachedData) {
-                TravelPlace travelPlace = travelPlaceService.getTravelPlaceByNameAndAddress(spot.getName(), spot.getAddress1());
+                TravelPlace travelPlace = travelPlaceService.getTravelPlaceByNameAndAddress(spot.getName(), spot.getAddress());
                 Long travelPlaceId = (travelPlace != null) ? travelPlace.getId() : null;
                 Long travelCount=(travelPlace != null) ? travelPlace.getTravelCount() : null;
 
@@ -158,7 +158,7 @@ public class PublicDataService {
             for (JsonNode item : items) {
 
                 String addr1 = item.path("addr1").asText();
-                String addr2 = item.path("addr2").asText();
+                //String addr2 = item.path("addr2").asText();
                 String areacode = item.path("areacode").asText();
                 String sigungucode = item.path("sigungucode").asText();
                 String cat1 = item.path("cat1").asText();
@@ -206,8 +206,7 @@ public class PublicDataService {
                 TouristSpotDto spot = TouristSpotDto.builder()
                         .travelPlaceId(travelPlaceId)
                         .city(city)
-                        .address1(addr1)
-                        .address2(addr2)
+                        .address(addr1)
                         .areaCode(areacode)
                         .sigunguCode(sigungucode)
                         .category(category)

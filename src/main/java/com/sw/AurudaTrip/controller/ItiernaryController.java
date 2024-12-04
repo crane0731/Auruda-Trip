@@ -47,16 +47,23 @@ public class ItiernaryController {
 
     }
 
-    //여행 계획 리스트로 조회
+    //자신의 여행 계획 리스트로 조회
     @GetMapping("/plans")
-    public ResponseEntity<List<ItiernaryListResponseDto>> getAllItiernaryList(@RequestHeader("User-Id") Long userId) {
+    public ResponseEntity<List<ItiernaryListResponseDto>> getAllItineraryList(@RequestHeader("User-Id") Long userId) {
             return ResponseEntity.ok().body(travelPlanService.getAllTravelPlans(userId));
 
     }
 
+    //테마별로 여행 계획 리스트 조회
+    @GetMapping("/plans/theme")
+    public ResponseEntity<List<ItiernaryListResponseDto>> getItineraryListByTheme(@RequestParam("theme")String theme){
+        List<ItiernaryListResponseDto> plans = travelPlanService.getPlansByTheme(theme);
+        return ResponseEntity.ok().body(plans);
+    }
+
     //여행 계획 상세 조회
     @GetMapping("/plans/{planId}")
-    public ResponseEntity<Object> getItiernary(@PathVariable("planId") Long planId) {
+    public ResponseEntity<Object> getItinerary(@PathVariable("planId") Long planId) {
 
         //ItiernaryService에 여행 계획 상세조회하는 메서드 추가해야함
 
@@ -67,7 +74,7 @@ public class ItiernaryController {
 
     //여행 계획 삭제
     @DeleteMapping("plans/{plan_id}")
-    public ResponseEntity<Object> deleteItiernary(@PathVariable("plan_id") Long planId) {
+    public ResponseEntity<Object> deleteItinerary(@PathVariable("plan_id") Long planId) {
 
             travelPlanService.deleteTravelPlanById(planId);
             return ResponseEntity.ok("여행 계획 삭제를 성공하였습니다.");

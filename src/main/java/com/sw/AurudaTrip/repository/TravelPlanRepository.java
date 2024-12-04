@@ -1,5 +1,6 @@
 package com.sw.AurudaTrip.repository;
 
+import com.sw.AurudaTrip.domain.Theme;
 import com.sw.AurudaTrip.domain.TravelPlan;
 import com.sw.AurudaTrip.dto.email.TravelPlanEmailDto;
 import io.lettuce.core.dynamic.annotation.Param;
@@ -19,6 +20,9 @@ public interface TravelPlanRepository extends JpaRepository<TravelPlan, Long> {
     @Query("SELECT new com.sw.AurudaTrip.dto.email.TravelPlanEmailDto(tp.title, u.email, tp.region,tp.startDate, tp.endDate) " +
             "FROM TravelPlan tp JOIN tp.user u WHERE tp.startDate = :startDate")
     List<TravelPlanEmailDto> findEmailDetailsByStartDate(@Param("startDate") String startDate);
+
+
+    List<TravelPlan> findTop20ByTheme1OrTheme2OrTheme3(Theme theme1, Theme theme2, Theme theme3);
 
 
 }
