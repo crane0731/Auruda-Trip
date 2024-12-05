@@ -205,6 +205,7 @@ public class PublicDataService {
                 // 빌더 패턴으로 TouristSpotDto 객체 생성
                 TouristSpotDto spot = TouristSpotDto.builder()
                         .travelPlaceId(travelPlaceId)
+                        .travelCount(0L)
                         .city(city)
                         .address(addr1)
                         .areaCode(areacode)

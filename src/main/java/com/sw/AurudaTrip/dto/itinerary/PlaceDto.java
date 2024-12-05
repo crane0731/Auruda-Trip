@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PlaceDto {
-
+    private Long placeId;
     private String day;
     private String name;
     private String city;

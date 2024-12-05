@@ -148,6 +148,7 @@ public class ItiernaryService {
                 TravelPlace place = travelPlaceService.getPlaceById(travelPlanTravelPlace.getTravelPlace().getId());
 
                 PlaceDto placeDto = PlaceDto.builder()
+                        .placeId(place.getId())
                         .day(travelPlanTravelPlace.getDay())
                         .name(place.getName())
                         .city(place.getCity())

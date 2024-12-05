@@ -63,7 +63,7 @@ public class ItiernaryController {
 
     //여행 계획 상세 조회
     @GetMapping("/plans/{planId}")
-    public ResponseEntity<Object> getItinerary(@PathVariable("planId") Long planId) {
+    public ResponseEntity<ItiernaryResponseDto> getItinerary(@PathVariable("planId") Long planId) {
 
         //ItiernaryService에 여행 계획 상세조회하는 메서드 추가해야함
 

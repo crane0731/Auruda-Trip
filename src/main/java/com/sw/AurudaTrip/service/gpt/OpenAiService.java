@@ -141,6 +141,7 @@ public class OpenAiService {
                             
                             GptPlaceResponseDto gptPlaceResponseDto = GptPlaceResponseDto.builder()
                                     .travelPlaceId(spotDto.getTravelPlaceId())
+                                    .travelCount(spotDto.getTravelCount())
                                     .day(day)
                                     .name(name)
                                     .city(spotDto.getCity())

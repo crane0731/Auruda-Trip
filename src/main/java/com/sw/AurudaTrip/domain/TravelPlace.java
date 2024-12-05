@@ -46,7 +46,7 @@ public class TravelPlace {
     private String photoUrl;
 
     public void addTravelCount() {
-        this.travelCount +=1;
+        this.travelCount ++;
     }
 
 

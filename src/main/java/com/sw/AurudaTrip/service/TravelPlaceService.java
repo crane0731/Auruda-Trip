@@ -30,7 +30,7 @@ public class TravelPlaceService {
                 .description(placeDto.getDescription())
                 .city(placeDto.getCity())
                 .address(placeDto.getAddress())
-                .travelCount(0L)
+                .travelCount(1L)
                 .category(Category.fromKoreanName(placeDto.getCategory()))
                 .lat(placeDto.getLat())
                 .lng(placeDto.getLng())
