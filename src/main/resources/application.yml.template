@@ -64,3 +64,8 @@ google:
   api:
     key: ${YOUR_GOOGLE_API_KEY_HERE}
 
+# 카카오 API 키 추가
+kakao:
+  api:
+    rest-api-key: ${YOUR_KAKAO_KEY_HERE}
+

@@ -45,6 +45,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'io.lettuce:lettuce-core:6.2.7.RELEASE'
 
+	// Jsoup - HTML 파싱 라이브러리
+	implementation 'org.jsoup:jsoup:1.14.3'
+
+// Selenium - 브라우저 자동화 라이브러리
+	implementation 'org.seleniumhq.selenium:selenium-java:4.0.0'
+
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.mysql:mysql-connector-j'

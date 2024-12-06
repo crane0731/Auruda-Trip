@@ -46,11 +46,8 @@ public class ReviewService {
                 .build();
 
         //리뷰 저장
-        if (reviewRepository.findByUser(user).isPresent()) {
-            throw new RuntimeException("이미 해당 사용자가 작성한 리뷰가 존재합니다.");
-        }else{
-            reviewRepository.save(review);
-        }
+        reviewRepository.save(review);
+
     }
 
     @Transactional
