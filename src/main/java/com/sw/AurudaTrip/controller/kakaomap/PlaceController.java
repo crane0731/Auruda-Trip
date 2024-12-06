@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/kakao/places")
+@RequestMapping("/api/auruda/kakao/places")
 public class PlaceController {
 
     private final PlaceService placeService;
