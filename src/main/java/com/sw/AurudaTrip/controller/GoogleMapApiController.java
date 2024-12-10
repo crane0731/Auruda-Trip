@@ -22,6 +22,11 @@ public class GoogleMapApiController {
 @PostMapping("")
 public ResponseEntity<List<GooglePhotoResponseDto>> getPhoto(@RequestBody GooglePhotoRequestDto googlePhotoRequestDto) {
 
+    List<String> testNames = googlePhotoRequestDto.getPlaceName();
+    for (String testName : testNames) {
+        System.out.println("testName = " + testName);
+    }
+
     List<GooglePhotoResponseDto> photoResponseDtos = new ArrayList<>();
 
     List<String> placeName = googlePhotoRequestDto.getPlaceName();
