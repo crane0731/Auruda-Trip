@@ -25,8 +25,8 @@ public class CrawlerService {
 
     // 축제 정보를 가져오는 서비스
     public List<Map<String, String>> fetchLatestFestivalData(String region, int pageCount) {
-        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Desktop\\프로젝트\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/var/jenkins_home/workspace/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dlwns\\source\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "/var/jenkins_home/workspace/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
@@ -155,7 +155,7 @@ public class CrawlerService {
 
     // 콘서트 정보를 가져오는 메서드
     public List<Map<String, String>> fetchConcertData(int pageCount, String filter, String region) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Desktop\\프로젝트\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dlwns\\source\\chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
