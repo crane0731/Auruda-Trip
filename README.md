@@ -50,6 +50,15 @@
 
 ---
 
+## 📄PPT
+
+
+[아우르다 최종.pptx](https://github.com/user-attachments/files/21661351/default.pptx)
+
+---
+
+
+
 ## 🖼️서비스 이미지
 
 ### 메인화면
